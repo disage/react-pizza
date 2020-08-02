@@ -1,53 +1,59 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 50px 50px 50px;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid #f7f7f7;
+  .logoWrapper {
     display: flex;
+    .logo {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      margin-right: 20px;
+    }
+    .logoDescriptionWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 50px;
+      .logoName {
+        font-size: 24px;
+        margin: 0;
+        color: #181818;
+      }
+      .logoDescription {
+        margin: 0;
+        font-size: 16px;
+        color: #7b7b7b;
+      }
+    }
+  }
+  .basketBtn {
+    display: flex;
+    width: 120px;
+    height: 50px;
+    background: #fe5f1e;
+    border-radius: 30px;
+    align-items: center;
     justify-content: space-between;
-    padding: 50px 50px 50px 50px;
-    .logoWrapper {
-        display: flex;
-        .logo {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            display: flex;
-            margin-right: 20px;
-        }
-        .logoDescriptionWrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 50px;
-            .logoName {
-                font-size: 24px;
-                margin: 0;
-                color: #181818;
-            }
-            .logoDescription {
-                margin: 0;
-                font-size: 16px;
-                color: #7b7b7b;
-            }
-        }
+    padding: 0 30px 0 30px;
+    color: #fff;
+    .basketCost {
+      display: flex;
     }
-    .basketBtn {
-        display: flex;
-        width: 120px;
-        height: 50px;
-        background: #fe5f1e;
-        border-radius: 30px;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 30px 0 30px;
-        color: #fff;
-        .basketCost {
-            display: flex;
-        }
-        .basketDivider {
-            width: 1px;
-            height: 50%;
-            background: rgba(255, 255, 255, 0.25);
-        }
-        .basketCount {
-            display: flex;
-        }
+    .basketDivider {
+      width: 1px;
+      height: 50%;
+      background: rgba(255, 255, 255, 0.25);
     }
+    .basketIcon {
+      display: flex;
+    }
+    .basketCount {
+      display: flex;
+    }
+  }
 }
