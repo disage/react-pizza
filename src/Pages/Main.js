@@ -5,11 +5,7 @@ const Main = () => {
   return (
     <div className="Main">
       <div className="categoryWrapper">
-        <CategoryBtn category="all" text="Все" />
-        <CategoryBtn category="meat" text="Мясные" />
-        <CategoryBtn category="vegan" text="Вегеторианские" />
-        <CategoryBtn category="grill" text="Гриль" />
-        <CategoryBtn category="spice" text="Острые" />
+        <CategoryBtn items={['Мясные', 'Вегеторианские', 'Гриль', 'Острые']} />
       </div>
     </div>
   );
