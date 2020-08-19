@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './CategoryBtn.scss';
+
 const CategoryBtn = ({ items }) => {
   const [activeItem, setActiveItem] = useState(null);
   const onSelectedItem = (index) => {
