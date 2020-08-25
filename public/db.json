@@ -1,0 +1,84 @@
+{
+  "pizzas": [
+    {
+      "id": 0,
+      "imageUrl": "https://unsplash.com/photos/yDKHJxfiWDk",
+      "name": "Папперони с перцем",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 300,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://unsplash.com/photos/yDKHJxfiWDk",
+      "name": "Четыри сезона",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 300,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://unsplash.com/photos/yDKHJxfiWDk",
+      "name": "Чисбургер пицца",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 300,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://unsplash.com/photos/yDKHJxfiWDk",
+      "name": "Салями",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 300,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://unsplash.com/photos/yDKHJxfiWDk",
+      "name": "Папперони с перцем",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 300,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://unsplash.com/photos/yDKHJxfiWDk",
+      "name": "Папперони с перцем",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 300,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://unsplash.com/photos/yDKHJxfiWDk",
+      "name": "Папперони с перцем",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 300,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://unsplash.com/photos/yDKHJxfiWDk",
+      "name": "Папперони с перцем",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 300,
+      "category": 0,
+      "rating": 4
+    }
+  ]
+}

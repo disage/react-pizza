@@ -5,4 +5,10 @@
         padding: 50px 50px 50px 40px;
         justify-content: space-between;
     }
+    .content__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 50px;
+    }
 }

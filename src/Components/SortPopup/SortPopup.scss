@@ -12,9 +12,11 @@
             border-right: 6px solid transparent;
             border-bottom: 8px solid #000;
             margin-right: 5px;
+            transition: 0.2s;
         }
         .rotatedTreangle {
             transform: rotate(180deg);
+            transition: 0.2s;
         }
         .sortLbl {
             display: flex;
