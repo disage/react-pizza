@@ -3,7 +3,7 @@ import './Main.scss';
 import CategoryBtn from '../Components/CategoryBtn/CategoryBtn';
 import { SortPopup } from '../Components/SortPopup/SortPopup';
 import PizzaBlock from '../Components/PizzaBlock/PizzaBlock';
-const Main = () => {
+const Main = ({ items }) => {
   return (
     <div className="Main">
       <div className="categoryWrapper">
@@ -11,11 +11,9 @@ const Main = () => {
         <SortPopup items={['популярности', 'цене', 'алфавиту']} />
       </div>
       <div className="content__items">
-        <PizzaBlock />
-        <PizzaBlock />
-        <PizzaBlock />
-        <PizzaBlock />
-        <PizzaBlock />
+        {items.map((obj) => (
+          <PizzaBlock key={obj.id} {...obj} />
+        ))}
       </div>
     </div>
   );

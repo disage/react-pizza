@@ -5,20 +5,21 @@ import Cart from './Pages/Cart';
 import Header from './Components/Header/Header';
 
 const App = () => {
+  const [pizzas, setPizzaz] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('http://localhost:3000/db.json')
+      .then((resp) => resp.json())
+      .then((json) => {
+        setPizzaz(json.pizzas);
+      });
+  }, []);
   return (
     <BrowserRouter>
       <Header />
-      <Route exact path="/" component={Main} />
+      <Route path="/" render={() => <Main items={pizzas} exact />} />
       <Route path="/cart" component={Cart} />
     </BrowserRouter>
-    // <BrowserRouter>
-    //   <Header />
-    //   <Route exact path="/" render={() => <Home clientsData={props.state.clientsData} />} />
-    //   <Route path="/Music" render={() => <Music musicData={props.state.musicData} />} />
-    //   <Route path="/Services" render={() => <Services servicesData={props.state.servicesData} />} />
-    //   <Route path="/Contacts" component={Contacts} />
-    //   <Footer />
-    // </BrowserRouter>
   );
 };
 
