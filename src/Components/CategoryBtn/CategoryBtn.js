@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './CategoryBtn.scss';
 
-const CategoryBtn = ({ items }) => {
+const CategoryBtn = React.memo(function CategoryBtn({ items, onClickItem }) {
   const [activeItem, setActiveItem] = useState(null);
   const onSelectedItem = (index) => {
     setActiveItem(index);
+    onClickItem(index);
   };
   return (
     <ul className="CategoryBtn">
@@ -24,6 +25,6 @@ const CategoryBtn = ({ items }) => {
         ))}
     </ul>
   );
-};
+});
 
 export default CategoryBtn;

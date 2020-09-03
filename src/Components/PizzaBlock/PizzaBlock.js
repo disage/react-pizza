@@ -1,6 +1,7 @@
 import React from 'react';
 import './PizzaBlock.scss';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const PizzaBlock = ({ price, name, imageUrl, types, sizes }) => {
   const availableTypes = ['традиционное', 'тонкое'];
@@ -68,6 +69,17 @@ const PizzaBlock = ({ price, name, imageUrl, types, sizes }) => {
       </div>
     </div>
   );
+};
+
+PizzaBlock.propTypes = {
+  name: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  types: PropTypes.arrayOf(PropTypes.number).isRequired,
+  sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
+PizzaBlock.defaultProps = {
+  types: [],
 };
 
 export default PizzaBlock;
