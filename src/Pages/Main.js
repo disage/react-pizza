@@ -5,34 +5,43 @@ import { SortPopup } from '../Components/SortPopup/SortPopup';
 import PizzaBlock from '../Components/PizzaBlock/PizzaBlock';
 import PizzaBlockLoader from '../Components/PizzaBlock/PizzaBlockLoader';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCategory } from '../redux/actions/filters';
+import { setCategory, setSortBy } from '../redux/actions/filters';
 import { fetchPizzas } from '../redux/actions/pizzas';
 
 const categoryNames = ['Мясные', 'Вегеторианские', 'Гриль', 'Острые'];
 const sortItems = [
   { name: 'популярности', type: 'popular' },
   { name: 'цене', type: 'price' },
-  { name: 'алфавиту', type: 'alphabet' },
+  { name: 'алфавиту', type: 'name' },
 ];
 
 const Main = () => {
   const dispatch = useDispatch();
   const items = useSelector(({ pizzas }) => pizzas.items);
   const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded);
+  const { category, sortBy } = useSelector(({ filters }) => filters);
 
   React.useEffect(() => {
-    dispatch(fetchPizzas());
+    dispatch(fetchPizzas(sortBy, category));
+  }, [category, sortBy]);
+
+  const onSelectCategory = React.useCallback((index) => {
+    dispatch(setCategory(index));
   }, []);
 
-  const onSelectCategory = (index) => {
-    dispatch(setCategory(index));
-  };
+  const onSelectSortType = React.useCallback((type) => {
+    dispatch(setSortBy(type));
+  }, []);
 
   return (
     <div className="Main">
       <div className="categoryWrapper">
-        <CategoryBtn onClickItem={onSelectCategory} items={categoryNames} />
-        <SortPopup items={sortItems} />
+        <CategoryBtn
+          activeCategory={category}
+          onClickItem={onSelectCategory}
+          items={categoryNames}
+        />
+        <SortPopup activeSortType={sortBy} items={sortItems} onClickSortType={onSelectSortType} />
       </div>
       <div className="content__items">
         {isLoaded
