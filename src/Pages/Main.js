@@ -25,13 +25,19 @@ const Main = () => {
     dispatch(fetchPizzas(sortBy, category));
   }, [category, sortBy]);
 
-  const onSelectCategory = React.useCallback((index) => {
-    dispatch(setCategory(index));
-  }, []);
+  const onSelectCategory = React.useCallback(
+    (index) => {
+      dispatch(setCategory(index));
+    },
+    [dispatch],
+  );
 
-  const onSelectSortType = React.useCallback((type) => {
-    dispatch(setSortBy(type));
-  }, []);
+  const onSelectSortType = React.useCallback(
+    (type) => {
+      dispatch(setSortBy(type));
+    },
+    [dispatch],
+  );
 
   return (
     <div className="Main">
@@ -43,7 +49,7 @@ const Main = () => {
         />
         <SortPopup activeSortType={sortBy} items={sortItems} onClickSortType={onSelectSortType} />
       </div>
-      <div className="content__items">
+      <div className="contentItems">
         {isLoaded
           ? items.map((obj) => <PizzaBlock key={obj.id} isLoading={true} {...obj} />)
           : Array(12)
