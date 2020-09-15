@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <div className="header">
-      <div className="logoWrapper">
+      <Link to="/" className="logoWrapper">
         <div className="logo">
           <svg
             width="50"
@@ -102,7 +102,7 @@ const Header = () => {
           <h1 className="logoName">REACT PIZZA</h1>
           <p className="logoDescription">Самая вкусная пицца во вселенной</p>
         </div>
-      </div>
+      </Link>
       <Link to="/cart">
         <div className="basketBtn">
           <p className="basketCost">123 $</p>
