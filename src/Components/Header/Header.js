@@ -1,8 +1,12 @@
 import React from 'react';
 import './Header.scss';
 import { Link } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 const Header = () => {
+  const { totalPrice, totalCount } = useSelector(({ cart }) => ({
+    totalPrice: cart.totalPrice,
+    totalCount: cart.totalCount,
+  }));
   return (
     <div className="header">
       <Link to="/" className="logoWrapper">
@@ -105,7 +109,7 @@ const Header = () => {
       </Link>
       <Link to="/cart">
         <div className="basketBtn">
-          <p className="basketCost">123 $</p>
+          <p className="basketCost">{totalPrice}₴</p>
           <div className="basketDivider"></div>
           <div className="basketIcon">
             <svg
@@ -120,7 +124,7 @@ const Header = () => {
               />
             </svg>
           </div>
-          <div className="basketCount">3</div>
+          <div className="basketCount">{totalCount}</div>
         </div>
       </Link>
     </div>

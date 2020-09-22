@@ -8,11 +8,7 @@ export const setLoaded = (payload) => ({
 export const fetchPizzas = (sortBy, category) => (dispatch) => {
   dispatch(setLoaded(false));
   axios
-    .get(
-      `http://localhost:3001/pizzas?${
-        category !== null ? `category=${category}` : ''
-      }&_sort=${sortBy}&_order=desc`,
-    )
+    .get(`/pizzas?${category !== null ? `category=${category}` : ''}&_sort=${sortBy}&_order=desc`)
     .then(({ data }) => {
       dispatch(setPizzas(data));
     });

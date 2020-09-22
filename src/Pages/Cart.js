@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import CartItem from '../Components/CartItem/CartItem';
 import './Cart.scss';
 const Cart = () => {
+  const { totalPrice, totalCount, items } = useSelector(({ cart }) => cart);
+
+  const addedPizzas = Object.keys(items).map((key) => {
+    return items[key].items[0];
+  });
   return (
     <div className="Cart">
       <div className="cartContainer">
@@ -61,17 +67,22 @@ const Cart = () => {
           </div>
         </div>
         <div className="orderList">
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {addedPizzas.map((obj) => (
+            <CartItem
+              name={obj.name}
+              type={obj.type}
+              size={obj.size}
+              totalPrice={items[obj.id].totalPrice}
+              totalCount={items[obj.id].items.length}
+            />
+          ))}
         </div>
         <div className="orderInfo">
           <p>
-            Всего пицц: <b>3шт</b>
+            Всего пицц: <b>{totalCount} шт.</b>
           </p>
           <p>
-            Сумма заказа: <b>900 грн</b>
+            Сумма заказа: <b>{totalPrice}₴</b>
           </p>
         </div>
         <div className="orderBtn">

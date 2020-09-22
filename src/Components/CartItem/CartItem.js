@@ -1,6 +1,6 @@
 import React from 'react';
 import './CartItem.scss';
-const CartItem = () => {
+const CartItem = ({ name, type, size, totalPrice, totalCount }) => {
   return (
     <div className="orderPizza">
       <div className="pizzaInfo">
@@ -9,8 +9,10 @@ const CartItem = () => {
           alt="pizza"
         />
         <div className="pizzaDesc">
-          <h3>Сырный цыпленок</h3>
-          <p>тонкое тесто, 26 см</p>
+          <h3>{name}</h3>
+          <p>
+            {type}, {size}см
+          </p>
         </div>
       </div>
       <div className="positionInfo">
@@ -29,7 +31,7 @@ const CartItem = () => {
             />
           </svg>
 
-          <p className="qtyValue">2</p>
+          <p className="qtyValue">{totalCount}</p>
           <svg
             className="qtyControllerBtn"
             width="32"
@@ -44,7 +46,7 @@ const CartItem = () => {
             />
           </svg>
         </div>
-        <p className="positionPrice">770 грн</p>
+        <p className="positionPrice">{totalPrice}₴</p>
         <svg
           className="positionRemoveBtn"
           width="32"
