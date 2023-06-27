@@ -48,7 +48,7 @@ const PizzaBlock = ({
               onClick={() => onSelectType(index)}
               className={classNames({
                 active: activeType === index,
-                disabled: !types.includes(index),
+                disabled: !types?.includes(index),
               })}>
               {type}
             </li>
@@ -61,7 +61,7 @@ const PizzaBlock = ({
               onClick={() => onSelectSize(index)}
               className={classNames({
                 active: activeSize === index,
-                disabled: !sizes.includes(size),
+                disabled: !sizes?.includes(size),
               })}>
               {size} см.
             </li>
